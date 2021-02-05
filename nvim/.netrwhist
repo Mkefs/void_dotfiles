@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/mkefss/.config/ncmpcpp'
+let g:netrw_dirhist_8='/home'
+let g:netrw_dirhist_7='/home/mkefss'
+let g:netrw_dirhist_6='/home/mkefss/.local'
+let g:netrw_dirhist_5='/home/mkefss/.config/sway'
+let g:netrw_dirhist_4='/home/mkefss/.config/alacritty'
+let g:netrw_dirhist_3='/home/mkefss'
+let g:netrw_dirhist_2='/home/mkefss/.config/nvim'
+let g:netrw_dirhist_1='/home/mkefss/.config'
+let g:netrw_dirhist_0='/home/mkefss/.config/nvim'
