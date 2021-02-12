@@ -69,7 +69,7 @@ input "2:14:ETPS/2_Elantech_Touchpad" events disabled
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+q kill
+    bindsym $mod+Shift+q kill
     
     # Screenshot to clipboard
     bindsym Print exec grim - | wl-copy -t image/png
@@ -92,8 +92,6 @@ input "2:14:ETPS/2_Elantech_Touchpad" events disabled
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'Salir de Sway?' -b 'Si' 'swaymsg exit' -s 'No' \
     	--button-border-size 2 --button-padding 5
-    # Open browser
-    bindsym $mod+f1 exec chromium
 #
 # Moving around:
 #
@@ -225,6 +223,8 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+
+exec mako
 
 bar {
 	id 0

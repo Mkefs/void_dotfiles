@@ -1,6 +1,7 @@
+
 " Nvim pluggins
 call plug#begin('~/.config/nvim/plugged')
-
+Plug 'itchyny/lightline.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -15,7 +16,6 @@ Plug 'mhartington/oceanic-next'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-devicons.vim'
-
 call plug#end()
 " Vim settings
  
@@ -24,14 +24,6 @@ set splitbelow
 set splitright
 " Font
 set guifont=Fantasque\ Sans\ Mono\ 10
-" Auto brackets
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 " Sytnax
 syntax enable
 " Mouse integration
@@ -50,15 +42,6 @@ set showcmd
 set termguicolors
 let g:gruvbox_italics=1
 colorscheme gruvbox
-" Lightline theme
-let g:lightline = { 'colorscheme': 'gruvbox' }
-
-" netrw config
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
 
 " Tabs config
 set tabstop=4
@@ -66,11 +49,15 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 
+let g:lightline = {
+	\ 'colorscheme': 'gruvbox',
+	\ }
+
 " Fern config
 let g:fern#renderer = "nerdfont"
 augroup my-fern-startup
   autocmd! *
-  autocmd VimEnter * ++nested Fern %:h -reveal=% -drawer -toggle
+  autocmd VimEnter * ++nested Fern %:h -reveal=% -drawer -toggle -stay -keep -width=25
 augroup END
 
 " Nerd fonts config
