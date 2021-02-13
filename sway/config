@@ -27,7 +27,7 @@ bindsym $mod+F2 exec rofi -show run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg '~/Imágenes/EMjNwqyUcAUSm8S.jpg' fill
+output * bg '~/Imágenes/anime_2D_irl-1466823.jpg' fill
 #
 # Example configuration:
 #
@@ -225,6 +225,8 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 
 exec mako
+seat seat0 xcursor_theme Breeze_Obsidian 10
+
 
 bar {
 	id 0
