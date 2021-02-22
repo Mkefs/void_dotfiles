@@ -1,6 +1,7 @@
 
 " Nvim pluggins
 call plug#begin('~/.config/nvim/plugged')
+Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
