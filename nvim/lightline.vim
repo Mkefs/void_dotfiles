@@ -1,3 +1,3 @@
 let g:lightline = {
-      \ 'colorscheme': 'tokyonight',
+      \ 'colorscheme': 'gruvbox_material',
       \ }

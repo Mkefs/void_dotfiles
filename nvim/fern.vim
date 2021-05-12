@@ -4,6 +4,8 @@ let g:fern#renderer = "nerdfont"
 
 function! s:init_fern() abort
 	set foldmethod=manual
+	set nonumber
+	set norelativenumber
 	nmap <buffer> <Backspace> <Plug>(fern-action-collapse)
 	nmap <buffer> <CR> <Plug>(fern-action-open-or-expand)
 	nmap <buffer> e <Plug>(fern-action-enter)
@@ -14,5 +16,5 @@ endfunction
 augroup my-fern-startup
 	autocmd! *
 	autocmd FileType fern call s:init_fern()
-	autocmd VimEnter * ++nested Fern %:h -reveal=% -drawer -toggle -stay -keep -width=25
+	" autocmd VimEnter * ++nested Fern %:h -reveal=% -drawer -toggle -stay -keep -width=25
 augroup END
