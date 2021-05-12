@@ -1,0 +1,28 @@
+#!/bin/bash
+source ~/.zsh/gitstatus/gitstatus.prompt.zsh
+
+function reload() {
+	source ~/.zshrc
+}
+
+function themePrompt() {
+	local TOP_R_DIR="%F{50}"$'\ufc6e'" [%~]%f"
+	local DOWN_R_PROMT="%F{47}("$'\u03bb'"_)%%%f " 
+	local GIT_PROMPT=" %F{65}"
+	if gitstatus_query MY && [[ $VCS_STATUS_RESULT == ok-sync ]]; then
+		GIT_PROMPT+=$'\uf7a1'" {"
+		GIT_PROMPT+=${${VCS_STATUS_LOCAL_BRANCH:-@${VCS_STATUS_COMMIT}}//\%/%%}
+		GIT_PROMPT+="}"
+		(( VCS_STATUS_NUM_STAGED    )) && GIT_PROMPT+='+'
+		(( VCS_STATUS_NUM_UNSTAGED  )) && GIT_PROMPT+='!'
+		(( VCS_STATUS_NUM_UNTRACKED )) && GIT_PROMPT+='?'
+	fi
+	GIT_PROMPT+='%f'
+	setopt no_prompt_{bang,subst} prompt_percent  # enable/disable correct prompt expansions
+	
+	PROMPT=$TOP_R_DIR$GIT_PROMPT$'\n'$DOWN_R_PROMT
+}
+
+gitstatus_stop 'MY' && gitstatus_start -s -1 -u -1 -c -1 -d -1 'MY'
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd themePrompt
