@@ -1,0 +1,4 @@
+{
+	"svelte.plugin.svelte.format.config.svelteStrictMode": true,
+	"java.home": "/usr/lib/jvm/openjdk11"
+}

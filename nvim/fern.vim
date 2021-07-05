@@ -1,5 +1,5 @@
 " Fern config
-map <C-b> :Fern %:h -reveal=% -drawer -toggle -stay -keep -width=25<CR>
+map <silent> <C-b> :Fern %:h -reveal=% -drawer -toggle -stay -keep -width=25<CR>
 let g:fern#renderer = "nerdfont"
 
 function! s:init_fern() abort

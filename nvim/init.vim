@@ -1,15 +1,15 @@
 
 call plug#begin("~/.config/nvim/plugged")
+	Plug 'nathanaelkane/vim-indent-guides'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+	" Plug 'codota/tabnine-vim'
 	Plug 'lambdalisue/fern.vim'
 	Plug 'lambdalisue/nerdfont.vim'
 	Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 	Plug 'itchyny/lightline.vim'
-	" Plug 'Yggdroot/indentLine'
-	" Plug 'lukas-reineke/indent-blankline.nvim'
-	Plug 'sudar/comments.vim'
-	"" Colorchemeso on vim
+	
+	" Colorchemes on vim
 	Plug 'arzg/vim-colors-xcode'
 	Plug 'dylnmc/novum.vim'
 	Plug 'zefei/simple-dark'
